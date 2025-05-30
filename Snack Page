@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store Snacks</title>
+    <style>   
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+        }
+               .snack-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .cost {
+            font-weight: bold;
+            color: green;
+        }
+        .add-to-cart {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .add-to-cart:hover {
+            background-color: #0056b3;
+        }
+                   position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        let cart = JSON.parse(sessionStorage.getItem('cartItems')) || [];
+        let total = parseFloat(sessionStorage.getItem('cartTotal')) || 0;
+
+        function addToCart(itemName, itemCost) {
+            cart.push({ name: itemName, cost: itemCost });
+            total += itemCost;
+            updateCartInSession();
+            displayCart();
+            alert(`${itemName} has been added to your cart.`);
+        }
+
+               </script>
+</head>
+<body>
+    <header>
+        <h1>Grocery Store Snacks</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="fruits.html">Fruits</a>
+            <a href="vegetables.html">Vegetables</a>
+            <a href="cold-beverage.html">Cold Beverages</a>
+            <a href="payment.html">payment</a>
+        </nav>
+    </header>
+
+    <div class="snack-container">
+        <div class="snack-item">
+            <img src="chips.jpg" alt="Chips">
+            <h2>Chips</h2>
+            <p class="cost">$1.50</p>
+            <p>Crunchy and delicious!</p>
+            <button class="add-to-cart" onclick="addToCart('Chips', 1.50)">Add to Cart</button>
+        </div>
+        <div class="snack-item">
+            <img src="cookies.jpg" alt="Cookies">
+            <h2>Cookies</h2>
+            <p class="cost">$2.00</p>
+            <p>Sweet and satisfying!</p>
+            <button class="add-to-cart" onclick="addToCart('Cookies', 2.00)">Add to Cart</button>
+        </div>
+        <div class="snack-item">
+            <img src="popcorn.jpg" alt="Popcorn">
+            <h2>Popcorn</h2>
+           <div class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cartItems"></ul>
+        <p id="totalCost">Total: $0.00</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Grocery Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Display the cart on page load
+        displayCart();
+    </script>
+</body>
+</html>
+
