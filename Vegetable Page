@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetables - Grocery Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+           <div class="product">
+        <img src="spinach.jpg" alt="Spinach">
+        <h3>Spinach</h3>
+        <p>$1.00 per bunch</p>
+        <p>Rich in iron and vitamins, great for salads or cooking!</p>
+        <button class="btn" onclick="addToCart('Spinach', 1.00)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="brinjal.jpg" alt="Brinjal">
+        <h3>Brinjal</h3>
+        <p>$0.90 each</p>
+        <p>Vitamin-rich and versatile in dishes!</p>
+        <button class="btn" onclick="addToCart('Brinjal', 0.90)">Add to Cart</button>
+    </div>
+</div>
+
+<div class="cart">
+    <h2>Your Cart</h2>
+    <ul id="cartItems"></ul>
+    <p id="totalCost">Total: $0.00</p>
+    <button class="proceed-btn" onclick="proceedToPayment()">Proceed to Payment</button>
+</div>
+
+<footer>
+    <p>&copy; 2024 Grocery Store. All rights reserved.</p>
+</footer>
+
+            cartItems.appendChild(li);
+        });
+
+        totalCost.textContent = `Total: $${total.toFixed(2)}`;
+    }
+
+    function proceedToPayment() {
+        window.location.href = 'payment.html';
+    }
+
+    displayCart(); // Show cart on page load
+</script>
+
+</body>
+</html>
+
+
