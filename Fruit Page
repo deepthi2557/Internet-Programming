@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits - Grocery Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+          </div>
+    <div class="product">
+        <img src="strawberry.jpg" alt="Strawberry">
+        <h3>Strawberry</h3>
+        <p>$3.00 per pound</p>
+        <button class="btn" onclick="addToCart('Strawberry', 3.00)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="kiwi.jpg" alt="Kiwi">
+        <h3>Kiwi</h3>
+        <p>$1.50 each</p>
+        <button class="btn" onclick="addToCart('Kiwi', 1.50)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="pineapple.jpg" alt="Pineapple">
+        <h3>Pineapple</h3>
+        <p>$3.50 each</p>
+        <button class="btn" onclick="addToCart('Pineapple', 3.50)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="mango.jpg" alt="Mango">
+        <h3>Mango</h3>
+        <p>$1.80 each</p>
+        <button class="btn" onclick="addToCart('Mango', 1.80)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <img src="blueberry.jpg" alt="Blueberry">
+        <h3>Blueberry</h3>
+        <p>$4.00 per pint</p>
+        <button class="btn" onclick="addToCart('Blueberry', 4.00)">Add to Cart</button>
+    </div>
+</div>
+
+<div class="cart-container">
+    <h2>Your Cart</h2>
+    <ul id="cartItems"></ul>
+    <p id="totalCost">Total: $0.00</p>
+    <button onclick="proceedToPayment()">Proceed to Payment</button>
+</div>
+
+<footer>
+    <p>&copy; 2024 Grocery Store. All rights reserved.</p>
+</footer>
+
+        totalCost.textContent = `Total: $${total.toFixed(2)}`;
+    }
+
+    function proceedToPayment() {
+        window.location.href = 'payment.html';
+    }
+
+    displayCart(); // Show cart on page load
+</script>
+
+</body>
+</html>
+
+
+
